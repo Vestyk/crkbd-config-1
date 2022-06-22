@@ -62,10 +62,11 @@
         macros {
                 ZMK_MACRO(pound_sign,
                         wait-ms = <0>;
-                        = <&macro_press &kp LALT>
-                        , <&macro_tap &kp N3>
-                        , <&macro_release &kp LALT>
-                        ;
+                        bindings
+                                = <&macro_press &kp LALT>
+                                , <&macro_tap &kp N3>
+                                , <&macro_release &kp LALT>
+                                ;
                 )
         };
 
