@@ -57,6 +57,10 @@
         flavor = "tap-preferred";
         tapping-term-ms = <500>; 
 };
+&lt {
+        flavor = "tap-preferred";
+        tapping-term-ms = <500>; 
+};
 
 / {
         macros {
@@ -75,9 +79,9 @@
                 // layer 0
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |     |  '  |  ,  |  .  |  P  |  Y  |   |  F  |  G   |  C  |  R  |  L  |  /  |
-// |     |  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  |  -  |
-// |  `  |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  |     |
+// |USBBT|  '  |  ,  |  .  |  P  |  Y  |   |  F  |  G   |  C  |  R  |  L  |  /  |
+// | LED+|  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  |  -  |
+// |  `  |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  |EXPWR|
 //                   | DEL | SPC | TAB |   | RET | BKSP | ESC |
                         bindings = <
    &out OUT_TOG    &kp SQT     &kp COMMA   &kp PERIOD  &kp P       &kp Y      &kp F     &kp G       &kp C        &kp R      &kp L        &kp SLASH
@@ -121,9 +125,9 @@
                 sym_mouse_layer {
 // -----------------------------------------------------------------------------------------
 // |   \  |  @  |  #  |  {  |  }  |  =  |   |     |     |     |     |     |      |
-// |   ?  |  `  |  %  |  (  |  )  | "|" |   |     |     |     |     |     |      |
-// |   *  |  &  |  ^  |  [  |  ]  |  ~  |   |     |     |     |     |     |      |
-//                    |  !  |  /  |  $  |   | ENT |     | ALT |
+// |   ?  |  `  |  %  |  (  |  )  | "|" |   |     | MLFT| MDWN| MUP | MRHT|      |
+// |   *  |  &  |  ^  |  [  |  ]  |  ~  |   |     | SLFT| SDWN| SUP | SRHT|      |
+//                    |  !  |  /  |  $  |   | LCLK| MCLK| RCLK|
                         bindings = <
    &kp BACKSLASH &kp AT        &kp HASH    &kp LEFT_BRACE       &kp RIGHT_BRACE        &kp EQUAL     &none      &none                &none                 &none                 &none                 &none
    &kp QUESTION  &kp GRAVE     &kp PERCENT &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS  &kp PIPE      &none      &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500)  &mmv MOVE_VERT(-2500) &mmv MOVE_HOR(2500)   &none
