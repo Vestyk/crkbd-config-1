@@ -52,6 +52,10 @@
         time-to-max-speed-ms = <2000>;
         acceleration-exponent=<0>;
 };
+&mt {
+        flavor = "tap-preferred";
+        tapping-term-ms = <500>; 
+};
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -63,9 +67,9 @@
 // |  `  |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  |     |
 //                   | DEL | SPC | TAB |   | RET | BKSP | ESC |
                         bindings = <
-   &none     &kp SQT     &kp COMMA   &kp PERIOD  &kp P       &kp Y      &kp F     &kp G       &kp C        &kp R      &kp L        &kp SLASH
-   &none     &mt LGUI A  &mt LALT O  &mt LCTRL E &mt LSHFT U &kp I      &kp D     &mt RSHFT H &mt RCTRL T  &mt RALT N &mt RGUI S   &kp MINUS
-   &kp GRAVE &kp SEMI    &kp Q       &kp J       &kp K       &kp X      &kp B     &kp M       &kp W        &kp V      &kp Z        &none
+   &out OUT_TOG    &kp SQT     &kp COMMA   &kp PERIOD  &kp P       &kp Y      &kp F     &kp G       &kp C        &kp R      &kp L        &kp SLASH
+   &rgb_ug RGB_EFF &mt LGUI A  &mt LALT O  &mt LCTRL E &mt LSHFT U &kp I      &kp D     &mt RSHFT H &mt RCTRL T  &mt RALT N &mt RGUI S   &kp MINUS
+   &kp GRAVE       &kp SEMI    &kp Q       &kp J       &kp K       &kp X      &kp B     &kp M       &kp W        &kp V      &kp Z        &ext_power EP_TOG
                                      &lt 1 DEL   &lt 2 SPACE &lt 3 TAB  &lt 3 RET &lt 2 BSPC  &lt 1 ESC
                         >;
                 };
