@@ -68,7 +68,7 @@
                         ;
                 )
         };
-/ {
+
         keymap {
                 compatible = "zmk,keymap";
                 // layer 0
