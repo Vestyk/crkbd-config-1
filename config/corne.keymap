@@ -7,8 +7,17 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+&mmv {    
+        time-to-max-speed-ms = <500>;
+        acceleration-exponent=<1>;
+};
+&mwh {    
+        time-to-max-speed-ms = <2000>;
+        acceleration-exponent=<0>;
+};
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -65,10 +74,10 @@
 // |   *  |  &  |  ^  |  [  |  ]  |  ~  |   |     |     |     |     |     |      |
 //                    |  !  |  /  |  $  |   | ENT |     | ALT |
                         bindings = <
-   &kp BACKSLASH &kp AT        &kp HASH    &kp LEFT_BRACE       &kp RIGHT_BRACE        &kp EQUAL     &none  &none       &none        &none      &none        &none
-   &kp QUESTION  &kp GRAVE     &kp PERCENT &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS  &kp PIPE      &none  &mt RSHFT H &mt RCTRL J  &mt RALT K &mt RGUI L   &none
-   &kp STAR      &kp AMPERSAND &kp CARET   &kp LEFT_BRACKET     &kp RIGHT_BRACKET      &kp TILDE     &none  &none       &none        &none      &none        &none
-                                           &kp EXCLAMATION      &kp SLASH              &kp DOLLAR    &none  &none       &none
+   &kp BACKSLASH &kp AT        &kp HASH    &kp LEFT_BRACE       &kp RIGHT_BRACE        &kp EQUAL     &none      &none                &none                 &none                 &none                 &none
+   &kp QUESTION  &kp GRAVE     &kp PERCENT &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS  &kp PIPE      &none      &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500)  &mmv MOVE_VERT(-2500) &mmv MOVE_HOR(2500)   &none
+   &kp STAR      &kp AMPERSAND &kp CARET   &kp LEFT_BRACKET     &kp RIGHT_BRACKET      &kp TILDE     &none      &mwh SCROLL_HOR(-15) &mwh SCROLL_VERT(-15) &mwh SCROLL_VERT(15)  &mwh SCROLL_HOR(15)   &none
+                                           &kp EXCLAMATION      &kp SLASH              &kp DOLLAR    &mkp LCLK  &mkp MCLK            &mkp RCLK
                         >;
                 };
         };
