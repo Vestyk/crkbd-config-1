@@ -84,10 +84,10 @@
 // |  `  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |EXPWR|
 //                   | DEL | SPC | TAB |   | RET | BKSP | ESC |
                         bindings = <
-   &out OUT_TOG    &kp Q       &kp  W      &kp E       &kp R       &kp Y      &kp U     &kp I       &kp O        &kp P      &kp LB         &kp SLASH
+   &out OUT_TOG    &kp Q       &kp W       &kp E       &kp R       &kp Y      &kp U     &kp I       &kp O        &kp P      &kp LB         &kp SLASH
    &rgb_ug RGB_EFF &mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F &kp G      &kp H     &mt RSHFT J &mt RCTRL K  &mt RALT L &mt RGUI SEMI  &kp SQT
    &kp GRAVE       &kp Z       &kp X       &kp C       &kp V       &kp B      &kp N     &kp M       &kp COMMA    &kp PERIOD &kp FSLH       &ext_power EP_TOG
-                                     &lt 1 DEL   &lt 2 SPACE &lt 3 TAB  &lt 3 RET &lt 2 BSPC  &lt 1 ESC
+                                           &lt 1 DEL   &lt 2 SPACE &lt 3 TAB  &lt 3 RET &lt 2 BSPC  &lt 1 ESC
                         >;
                 };
 
