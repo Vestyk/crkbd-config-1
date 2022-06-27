@@ -132,7 +132,7 @@
                 sym_mouse_layer {
 // When host set to qwerty
 // -----------------------------------------------------------------------------------------
-// |   \  |  @  |  #  |  _  |  +  |  =  |   |     |     |     |     |     |      |
+// |   \  |  @  |  #  |  _  |  +  |  ]  |   |     |     |     |     |     |      |
 // |   {  |  `  |  %  |  (  |  )  | "|" |   |     | MLFT| MDWN| MUP | MRHT|      |
 // |   *  |  &  |  ^  |  -  |  =  |  ~  |   |     | SLFT| SDWN| SUP | SRHT|      |
 //                    |  !  |  [  |  $  |   | LCLK| MCLK| RCLK|
@@ -143,7 +143,7 @@
 // |   *  |  &  |  ^  |  [  |  ]  |  ~  |   |     | SLFT| SDWN| SUP | SRHT|      |
 //                    |  !  |  /  |  $  |   | LCLK| MCLK| RCLK|
                         bindings = <
-   &kp BACKSLASH  &kp AT        &kp HASH    &kp UNDERSCORE       &kp PLUS               &kp EQUAL     &none      &none                &none                 &none                 &none                 &none
+   &kp BACKSLASH  &kp AT        &kp HASH    &kp UNDERSCORE       &kp PLUS               &kp RBKT     &none      &none                &none                 &none                 &none                 &none
    &kp LEFT_BRACE &kp GRAVE     &kp PERCENT &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS  &kp PIPE      &none      &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500)  &mmv MOVE_VERT(-2500) &mmv MOVE_HOR(2500)   &none
    &kp STAR       &kp AMPERSAND &kp CARET   &kp MINUS            &kp EQUAL              &kp TILDE     &none      &mwh SCROLL_HOR(-15) &mwh SCROLL_VERT(-15) &mwh SCROLL_VERT(15)  &mwh SCROLL_HOR(15)   &none
                                             &kp EXCLAMATION      &kp LBKT               &kp DOLLAR    &mkp LCLK  &mkp MCLK            &mkp RCLK
