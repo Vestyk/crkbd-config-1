@@ -108,12 +108,12 @@
 // |      |     |     |     |     |     |   |  LB+| LB-  | BDN | BUP |     | RESET|
 // |      | GUI | ALT | CTRL| SHFT|     |   |  TOG| PREV | VDN | VUP | NEXT| BOOTL|
 // |      |     |     |     |     |     |   |     | LS+  | LS- | LH+ | LH- | EXPWR|
-//                    |     | LOCK|     |   | STOP| PLPS | MUTE|
+//                    |     |     |     |   | STOP| PLPS | MUTE|
                         bindings = <
    &none  &none     &none     &none     &none     &none     &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp C_BRI_DN       &kp C_BRI_UP        &none           &reset
    &none  &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none     &rgb_ug RGB_TOG  &mt RSHFT C_PREV &mt RCTRL C_VOL_DN &mt LALT C_VOL_UP   &mt RGUI C_NEXT &bootloader
    &none  &none     &none     &none     &none     &none     &none            &rgb_ug RGB_SAI  &rgb_ug RGB_SAD    &rgb_ug RGB_HUI     &rgb_ug RGB_HUD &ext_power EP_TOG
-                              &to 7     &none     &none     &kp C_STOP       &kp C_PP         &kp K_MUTE
+                              &none     &none     &none     &kp C_STOP       &kp C_PP         &kp K_MUTE
                         >;
                 };
 
@@ -172,13 +172,13 @@
                 // layer 6
                 mouse_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   |     |     |     |     |     |      |
-// |      | GUI | ALT | CTRL| SHFT|     |   | MLFT| MDWN| MUP | MRHT|      |
+// | LOCK |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      | GUI | ALT | CTRL| SHFT|     |   | MLFT| MDWN| MUP | MRHT|     |      |
 // |      |     |     |     |     |     |   |     | SLFT| SDWN| SUP | SRHT|      |
 //                    |     |     |     |   | LCLK| MCLK| RCLK|
 
                         bindings = <
-   &none  &none     &none     &none     &none     &none     &none      &none                &none                 &none                 &none                 &none
+   &to 7  &none     &none     &none     &none     &none     &none      &none                &none                 &none                 &none                 &none
    &none  &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none     &none      &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500)  &mmv MOVE_VERT(-2500) &mmv MOVE_HOR(2500)   &none
    &none  &none     &none     &none     &none     &none     &none      &mwh SCROLL_HOR(-15) &mwh SCROLL_VERT(-15) &mwh SCROLL_VERT(15)  &mwh SCROLL_HOR(15)   &none
                               &none     &none     &none     &mkp LCLK  &mkp MCLK            &mkp RCLK
