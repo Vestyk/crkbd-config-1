@@ -53,26 +53,16 @@
         time-to-max-speed-ms = <2000>;
         acceleration-exponent=<0>;
 };
-
+&mt {
+        flavor = "tap-preferred";
+        tapping-term-ms = <350>; 
+};
 &lt {
         flavor = "tap-preferred";
-        tapping-term-ms = <200>; 
+        tapping-term-ms = <350>; 
 };
 
 / {
-
-        behaviors {
-                hm: homerow_mods {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "HOMEROW_MODS";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&kp>, <&kp>;
-                };
-        };
-
         keymap {
                 compatible = "zmk,keymap";
                 // layer 0
@@ -90,8 +80,8 @@
 // |  `  |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  |EXPWR|
 //                   | DEL | SPC | TAB |   | RET | BKSP | ESC |
                         bindings = <
-   &out OUT_TOG    &kp Q       &kp W       &hm LG(LA(LCTRL)) E &hm LG(LA(LC(LSHFT))) R  &kp T      &kp Y     &hm LG(LA(LC(LSHFT))) U &hm LG(LA(LCTRL)) I &kp O      &kp P          &kp LBKT
-   &rgb_ug RGB_EFF &hm LGUI A  &hm LALT S  &hm LCTRL D         &hm LSHFT F              &kp G      &kp H     &hm RSHFT J             &hm RCTRL K         &hm LALT L &hm RGUI SEMI  &kp SQT
+   &out OUT_TOG    &kp Q       &kp W       &mt LG(LA(LCTRL)) E &mt LG(LA(LC(LSHFT))) R  &kp T      &kp Y     &mt LG(LA(LC(LSHFT))) U &mt LG(LA(LCTRL)) I &kp O      &kp P          &kp LBKT
+   &rgb_ug RGB_EFF &mt LGUI A  &mt LALT S  &mt LCTRL D         &mt LSHFT F              &kp G      &kp H     &mt RSHFT J             &mt RCTRL K         &mt LALT L &mt RGUI SEMI  &kp SQT
    &kp GRAVE       &kp Z       &kp X       &kp C               &kp V                    &kp B      &kp N     &kp M                   &kp COMMA           &kp PERIOD &kp FSLH       &ext_power EP_TOG
                                            &lt 2 DEL           &lt 4 SPACE              &lt 6 TAB  &lt 5 RET &lt 3 BSPC              &lt 1 ESC
                         >;
@@ -106,7 +96,7 @@
 //                    | DEL | SPC | TAB |   |     |      |     |
                         bindings = <
    &reset      &bt BT_SEL 0  &kp F7      &kp F8       &kp F9       &kp F12     &none  &kp LG(LA(LC(LSHFT))) &kp LG(LA(LCTRL)) &none    &none    &none
-   &bootloader &bt BT_SEL 1  &hm LALT F4 &hm LCTRL F5 &hm LSHFT F6 &kp F11     &none  &kp RSHFT             &kp RCTRL         &kp LALT &kp RGUI &none
+   &bootloader &bt BT_SEL 1  &mt LALT F4 &mt LCTRL F5 &mt LSHFT F6 &kp F11     &none  &kp RSHFT             &kp RCTRL         &kp LALT &kp RGUI &none
    &bt BT_CLR  &bt BT_SEL 2  &kp F1      &kp F2       &kp F3       &kp F10     &none  &none                 &none             &none    &none    &none
                                          &none        &none        &none       &none  &none                 &none
                         >;
