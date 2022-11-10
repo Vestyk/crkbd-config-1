@@ -126,7 +126,7 @@
 //                    |  =  |  0  |  +  |   |     |      |     |
                         bindings = <
    &none  &kp LA(N3)  &kp N7  &kp N8       &kp N9 &kp LBKT         &none  &kp LG(LA(LC(LSHFT))) &kp LG(LA(LCTRL)) &none    &none    &none
-   &none  &kp E       &kp N4  &kp N5       &kp N6 &kp LS(N8)        &none  &kp RSHFT             &kp RCTRL         &kp LALT &kp RGUI &none
+   &none  &kp E       &kp N4  &kp N5       &kp N6 &kp LS(N8)       &none  &kp RSHFT             &kp RCTRL         &kp LALT &kp RGUI &none
    &none  &kp DOLLAR  &kp N1  &kp N2       &kp N3 &kp SQT          &none  &none                 &none             &none    &none    &none
                               &kp RBKT     &kp N0 &kp LS(RBKT)     &none  &none                 &none
                         >;
@@ -180,7 +180,7 @@
                         bindings = <
    &to 7  &none     &none     &kp LG(LA(LCTRL)) &kp LG(LA(LC(LSHFT))) &none     &kp F20    &kp F21              &kp F22               &kp F23               &kp F24               &none
    &none  &kp LGUI  &kp LALT  &kp LCTRL         &kp LSHFT             &none     &none      &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500)  &mmv MOVE_VERT(-2500) &mmv MOVE_HOR(2500)   &none
-   &none  &none     &none     &none             &none                 &none     &none      &mwh SCROLL_HOR(-15) &mwh SCROLL_VERT(-15) &mwh SCROLL_VERT(15)  &mwh SCROLL_HOR(15)   &none
+   &none  &none     &none     &none             &none                 &none     &none      &mwh SCROLL_HOR(15)  &mwh SCROLL_VERT(15)  &mwh SCROLL_VERT(-15) &mwh SCROLL_HOR(-15)  &none
                               &none             &none                 &none     &mkp LCLK  &mkp MCLK            &mkp RCLK
                         >;
                 };
