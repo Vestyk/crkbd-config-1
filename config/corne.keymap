@@ -55,75 +55,54 @@
 };
 &mt {
         flavor = "tap-preferred";
-        tapping-term-ms = <350>; 
+        tapping-term-ms = <250>; 
 };
 &lt {
         flavor = "tap-preferred";
-        tapping-term-ms = <350>; 
+        tapping-term-ms = <250>; 
 };
 
 / {
         keymap {
                 compatible = "zmk,keymap";
                 // layer 0
-                default_layer {
-// When host set to qwerty	
+                default_layer {	
 // -----------------------------------------------------------------------------------------
-// |USBBT|  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  [  |
-// | LED+|  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '  |
-// |  `  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |EXPWR|
-//                   | DEL | SPC | TAB |   | RET | BKSP | ESC |
-// When host set to dvorak	
-// -----------------------------------------------------------------------------------------
-// |USBBT|  '  |  ,  |  .  |  P  |  Y  |   |  F  |  G   |  C  |  R  |  L  |  ?  |
-// | LED+|  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  |  -  |
-// |  `  |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  |EXPWR|
+// |USBBT|  '  |  ,  |  .  |  P  |  Y  |   |  F  |  G   |  C  |  R  |  L  |     |
+// | LED+|  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  |     |
+// |     |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  |EXPWR|
 //                   | DEL | SPC | TAB |   | RET | BKSP | ESC |
                         bindings = <
-   &out OUT_TOG    &kp Q       &kp W       &mt LG(LA(LCTRL)) E &mt LG(LA(LC(LSHFT))) R  &kp T      &kp Y     &mt LG(LA(LC(LSHFT))) U &mt LG(LA(LCTRL)) I &kp O      &kp P          &kp LBKT
-   &rgb_ug RGB_EFF &mt LGUI A  &mt LALT S  &mt LCTRL D         &mt LSHFT F              &kp G      &kp H     &mt RSHFT J             &mt RCTRL K         &mt LALT L &mt RGUI SEMI  &kp SQT
-   &kp GRAVE       &kp Z       &kp X       &kp C               &kp V                    &kp B      &kp N     &kp M                   &kp COMMA           &kp PERIOD &kp FSLH       &ext_power EP_TOG
-                                           &lt 2 DEL           &lt 4 SPACE              &lt 6 TAB  &lt 5 RET &lt 3 BSPC              &lt 1 ESC
+   &out OUT_TOG    &kp SQT     &kp COMMA   &mt LG(LA(LCTRL)) PERIOD &mt LG(LA(LC(LSHFT))) P  &kp Y      &kp F     &mt LG(LA(LC(LSHFT))) G &mt LG(LA(LCTRL)) C &kp R      &kp L          &none
+   &rgb_ug RGB_EFF &mt LGUI A  &mt LALT O  &mt LCTRL E              &mt LSHFT U              &kp I      &kp D     &mt RSHFT H             &mt RCTRL T         &mt LALT N &mt RGUI S     &none
+   &none           &kp SEMI    &kp Q       &kp J                    &kp K                    &kp X      &kp B     &kp M                   &kp W               &kp V      &kp Z          &ext_power EP_TOG
+                                           &lt 1 DEL                &lt 4 SPACE              &lt 6 TAB  &lt 5 RET &lt 3 BSPC              &lt 1 ESC
                         >;
                 };
 
                 // layer 1
                 func_layer {
 // -----------------------------------------------------------------------------------------
-// | RESET| BT0 |  F7 |  F8 |  F9 | F12 |   |     |      |     |     |     |      |
-// | BOOTL| BT1 |  F4 |  F5 |  F6 | F11 |   |     | SHFT | CTRL| ALT | GUI |      |
-// | BTCLR| BT2 |  F1 |  F2 |  F3 | F10 |   |     |      |     |     |     |      |
-//                    | DEL | SPC | TAB |   |     |      |     |
+// | RESET|  1  |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |  0   |      |
+// | BOOTL| F1  |  F2  |  F3  |  F4  |  F5  |   |  F6  |  F7  |  F8  |  F9  | F10  |      |
+// | BTCLR| BT0 |  BT1 |  BT2 |  F11 |  F12 |   |      | PREV | VOL- | VOL+ | NEXT |      |
+//                     |  DEL |  SPC |  TAB |   | RET  | BKSP | ESC  |
                         bindings = <
-   &reset      &bt BT_SEL 0  &kp F7      &kp F8       &kp F9       &kp F12     &none  &kp LG(LA(LC(LSHFT))) &kp LG(LA(LCTRL)) &none    &none    &none
-   &bootloader &bt BT_SEL 1  &mt LALT F4 &mt LCTRL F5 &mt LSHFT F6 &kp F11     &none  &kp RSHFT             &kp RCTRL         &kp LALT &kp RGUI &none
-   &bt BT_CLR  &bt BT_SEL 2  &kp F1      &kp F2       &kp F3       &kp F10     &none  &none                 &none             &none    &none    &none
-                                         &none        &none        &none       &none  &none                 &none
+   &reset      &kp N1        &kp N2       &mt LG(LA(LCTRL)) N3 &mt LG(LA(LC(LSHFT))) N4 &kp N5      &kp N6  &mt LG(LA(LC(LSHFT))) N7 &mt LG(LA(LCTRL)) N8 &kp N9       &kp N0       &none
+   &bootloader &mt LGUI F1   &mt LALT F2  &mt LCTRL F3         &mt LSHFT F4             &kp F5      &kp F6  &mt RSHFT F7             &mt RCTRL F8         &mt LALT F9  &mt RGUI F10 &none
+   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2         &kp F11                  &kp F12     &none   &kp C_PREV               &kp C_VOL_DN         &kp C_VOL_UP &kp C_NEXT   &none
+                                          &trans               &trans                   &trans      &trans  &trans                   &trans
                         >;
                 };
 
                 // layer 2
-                media_layer {
+                sym_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   |  LB+| LB-  | BDN | BUP |     | RESET|
-// |      | GUI | ALT | CTRL| SHFT|     |   |  TOG| PREV | VDN | VUP | NEXT| BOOTL|
-// |      |     |     |     |     |     |   |     | LS+  | LS- | LH+ | LH- | EXPWR|
-//                    |     |     |     |   | STOP| PLPS | MUTE|
-                        bindings = <
-   &none  &none     &none     &kp LG(LA(LCTRL)) &kp LG(LA(LC(LSHFT))) &none     &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp C_BRI_DN    &kp C_BRI_UP    &none           &reset
-   &none  &kp LGUI  &kp LALT  &kp LCTRL         &kp LSHFT             &none     &rgb_ug RGB_TOG  &kp C_PREV       &kp C_VOL_DN    &kp C_VOL_UP    &kp C_NEXT      &bootloader
-   &none  &none     &none     &none             &none                 &none     &none            &rgb_ug RGB_SAI  &rgb_ug RGB_SAD &rgb_ug RGB_HUI &rgb_ug RGB_HUD &ext_power EP_TOG
-                              &none             &none                 &none     &kp C_STOP       &kp C_PP         &kp K_MUTE
-                        >;
-                };
-
-                // layer 3
-                num_layer {
-// -----------------------------------------------------------------------------------------
-// |      |  £  |  7  |  8  |  9  |  /  |   |     |      |     |     |     |      |
-// |      |  .  |  4  |  5  |  6  |  *  |   |     | SHFT | CTRL| ALT | GUI |      |
-// |      |  $  |  1  |  2  |  3  |  -  |   |     |      |     |     |     |      |
-//                    |  =  |  0  |  +  |   |     |      |     |
+// |      |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      |
+// |      |  £  |  <  |  [  |  {  |  (  |   |  )  |  }  |  ]  |  >  |  _  |      |
+// |      |  `  |  ~  |  "  |  =  |  \  |   |  /  |  *  |  +  |  -  |  |  |      |
+//                    |     |     |     |   |     |     |     |
+// FIXME: update mappings here
                         bindings = <
    &none  &kp LA(N3)  &kp N7  &kp N8       &kp N9 &kp LBKT         &none  &kp LG(LA(LC(LSHFT))) &kp LG(LA(LCTRL)) &none    &none    &none
    &none  &kp E       &kp N4  &kp N5       &kp N6 &kp LS(N8)       &none  &kp RSHFT             &kp RCTRL         &kp LALT &kp RGUI &none
