@@ -68,9 +68,9 @@
                 // layer 0
                 default_layer {	
 // -----------------------------------------------------------------------------------------
-// |USBBT|  '  |  ,  |  .  |  P  |  Y  |   |  F  |  G   |  C  |  R  |  L  |     |
-// | LED+|  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  |     |
-// |     |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  |EXPWR|
+// |USBBT|  '  |  ,  |  .  |  P  |  Y  |   |  F  |  G   |  C  |  R  |  L  |  /  |
+// | LED+|  A  |  O  |  E  |  U  |  I  |   |  D  |  H   |  T  |  N  |  S  |  -  |
+// |  `  |  ;  |  Q  |  J  |  K  |  X  |   |  B  |  M   |  W  |  V  |  Z  |EXPWR|
 //                   | DEL | SPC | TAB |   | RET | BKSP | ESC |
                         bindings = <
    &out OUT_TOG    &kp SQT     &kp COMMA   &mt LG(LA(LCTRL)) PERIOD &mt LG(LA(LC(LSHFT))) P  &kp Y      &kp F     &mt LG(LA(LC(LSHFT))) G &mt LG(LA(LCTRL)) C &kp R      &kp L          &none
@@ -81,10 +81,10 @@
                 };
 
                 // layer 1
-                func_layer {
+                num_layer {
 // -----------------------------------------------------------------------------------------
 // | RESET|  1  |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |  0   |      |
-// | BOOTL| F1  |  F2  |  F3  |  F4  |  F5  |   |  F6  |  F7  |  F8  |  F9  | F10  |      |
+// | BOOTL|  /  |   *  |   -  |   +  |   .  |   |   =  |   ,  |   $  |   £  |  %   |      |
 // | BTCLR| BT0 |  BT1 |  BT2 |  F11 |  F12 |   |      | PREV | VOL- | VOL+ | NEXT |      |
 //                     |  DEL |  SPC |  TAB |   | RET  | BKSP | ESC  |
                         bindings = <
@@ -99,8 +99,8 @@
                 sym_layer {
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      |
-// |      |  £  |  <  |  [  |  {  |  (  |   |  )  |  }  |  ]  |  >  |  _  |      |
-// |      |  `  |  ~  |  "  |  =  |  \  |   |  /  |  *  |  +  |  -  |  |  |      |
+// |      |  \  |  <  |  [  |  {  |  (  |   |  )  |  }  |  ]  |  >  |  /  |      |
+// |      |  `  |  ~  |  "  |  =  |  ?  |   |  _  |  *  |  +  |  -  | "|" |      |
 //                    |     |     |     |   |     |     |     |
 // FIXME: update mappings here
                         bindings = <
@@ -145,6 +145,21 @@
    &kp LEFT_BRACE &kp GRAVE     &kp PERCENT &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS  &kp PIPE      &none  &kp RSHFT             &kp RCTRL         &kp LALT &kp RGUI &none
    &kp STAR       &kp AMPERSAND &kp CARET   &kp MINUS            &kp EQUAL              &kp TILDE     &none  &none                 &none             &none    &none    &none
                                             &kp EXCLAMATION      &kp LBKT               &kp DOLLAR    &none  &none                 &none
+                        >;
+                };
+
+                // layer 1
+                func_layer {
+// -----------------------------------------------------------------------------------------
+// | RESET|  1  |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |  0   |      |
+// | BOOTL| F1  |  F2  |  F3  |  F4  |  F5  |   |  F6  |  F7  |  F8  |  F9  | F10  |      |
+// | BTCLR| BT0 |  BT1 |  BT2 |  F11 |  F12 |   |      | PREV | VOL- | VOL+ | NEXT |      |
+//                     |  DEL |  SPC |  TAB |   | RET  | BKSP | ESC  |
+                        bindings = <
+   &reset      &kp N1        &kp N2       &mt LG(LA(LCTRL)) N3 &mt LG(LA(LC(LSHFT))) N4 &kp N5      &kp N6  &mt LG(LA(LC(LSHFT))) N7 &mt LG(LA(LCTRL)) N8 &kp N9       &kp N0       &none
+   &bootloader &mt LGUI F1   &mt LALT F2  &mt LCTRL F3         &mt LSHFT F4             &kp F5      &kp F6  &mt RSHFT F7             &mt RCTRL F8         &mt LALT F9  &mt RGUI F10 &none
+   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2         &kp F11                  &kp F12     &none   &kp C_PREV               &kp C_VOL_DN         &kp C_VOL_UP &kp C_NEXT   &none
+                                          &trans               &trans                   &trans      &trans  &trans                   &trans
                         >;
                 };
 
