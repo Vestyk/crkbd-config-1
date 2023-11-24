@@ -8,8 +8,10 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/led/led.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
 &spi1 {
@@ -177,10 +179,10 @@
 
         tech_layer {
             bindings = <
-&rgb_ug RGB_TOG                  &rgb_ug RGB_BRI  &rgb_ug RGB_SAD  &rgb_ug RGB_EFF                   &rgb_ug RGB_SPD  &rgb_ug RGB_COLOR_HSB(231,80,58)    &rgb_ug RGB_COLOR_HSB(307,57,68)  &rgb_ug RGB_COLOR_HSB(175,79,49)  &none  &none  &none  &none
+&rgb_ug RGB_TOG                  &rgb_ug RGB_BRI  &rgb_ug RGB_SAD  &rgb_ug RGB_EFF                   &rgb_ug RGB_SPD  &rgb_ug RGB_COLOR_HSB(231,80,58)    &rgb_ug RGB_COLOR_HSB(307,57,68)  &rgb_ug RGB_COLOR_HSB(175,79,49)  &none  &none  &none  &out OUT_TOG
 &bt BT_CLR                       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2                      &bt BT_SEL 3     &bt BT_SEL 4                        &none                             &none                             &none  &none  &none  &none
 &rgb_ug RGB_COLOR_HSB(92,91,50)  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_COLOR_HSB(159,79,34)  &kp C_VOL_UP     &kp C_VOL_DN                        &none                             &none                             &none  &none  &none  &none
-                                                                   &none                             &none            &trans                              &none                             &none                             &none
+                                                                   &none                             &none            &ext_power EP_TOG                   &none                             &none                             &none
             >;
         };
     };
